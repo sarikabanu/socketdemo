@@ -10,11 +10,9 @@ app.get('/',function(req,res){
 io.on('connection',function(socket){
     console.log('one user connected '+socket.id);
     socket.on('showItems',function(data){
-		 console.log('one user connected###### '+data);
-     
-        socket.broadcast.emit('showItems', data);
-	
-    })
+	console.log('one user connected###### '+data);
+     	socket.broadcast.emit('showItems', data);
+	})
 
        socket.on('showEvents',function(data){
 		 console.log('one user connected###### '+data);
